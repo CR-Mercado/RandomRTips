@@ -171,7 +171,8 @@ is due to this moving average.
 
 
 ```r
-RCR_predictions <- predict(RCR_prediction_model, n.ahead = 20)
+RCR_predictions <- predict(RCR_prediction_model,
+                           n.ahead = length(test_) )
 residuals <- test_ - RCR_predictions$pred
 
 prediction_RMSE <- sqrt ( mean ( residuals^2 ) )
